@@ -23,7 +23,11 @@
     <div class="backdrop"></div>
     <transition name="blur">
       <Intro v-if="!players.length"></Intro>
+    </transition>
+    <transition name="blur">
       <TownInfo v-if="players.length && !session.nomination"></TownInfo>
+    </transition>
+    <transition name="blur">
       <Vote v-if="session.nomination"></Vote>
     </transition>
     <TownSquare></TownSquare>

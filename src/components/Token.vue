@@ -32,7 +32,7 @@
         x="66.6%"
         text-anchor="middle"
         class="label mozilla"
-        :font-size="role.name | nameToFontSize"
+        :font-size="roleNameFontSize"
       >
         <textPath xlink:href="#curve">
           {{ role.name }}
@@ -64,13 +64,13 @@ export default {
         (this.role.remindersGlobal || []).length
       );
     },
+    roleNameFontSize() {
+      return this.role.name && this.role.name.length > 10 ? "90%" : "110%";
+    },
     ...mapState(["grimoire"])
   },
   data() {
     return {};
-  },
-  filters: {
-    nameToFontSize: name => (name && name.length > 10 ? "90%" : "110%")
   },
   methods: {
     setRole() {
