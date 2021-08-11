@@ -260,7 +260,7 @@ export default {
 @import "../vars.scss";
 
 #townsquare {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   padding: 20px;
   display: flex;
